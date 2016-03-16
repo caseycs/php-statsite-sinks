@@ -1,0 +1,13 @@
+{
+    "name": "iliakondrashov/php-statsite-sinks",
+    "description": "Sinks for statsite written on php",
+    "authors": [
+        {
+            "name": "Ilia Kondrashov",
+            "email": "caseycs@gmail.com"
+        }
+    ],
+    "require": {
+        "domnikl/statsd": "^2.3"
+    }
+}
