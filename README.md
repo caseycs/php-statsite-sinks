@@ -6,7 +6,7 @@ Here are two sinks (they call backends this way) for https://github.com/armon/st
 First one to forward data to another statsd:
 
 ```
-php /home/vagrant/src/php-statsite-sinks/forward.php localhost 8126
+php forward.php localhost 8126
 ```
 
 Second one - to push data to Zabbix:
