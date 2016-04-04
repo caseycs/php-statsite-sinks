@@ -38,7 +38,7 @@ if ($stdinLines) {
             case 'gauges':
             case 'counts':
                 $value = (float)$value;
-                $line = "{$hostname} {$namespace}{$type}.{$key} {$value}";
+                $line = "{$hostname} {$namespace}{$key}.{$type} {$value}";
                 $zabbixFileContent .= $line . PHP_EOL;
                 msg($line);
                 break;
