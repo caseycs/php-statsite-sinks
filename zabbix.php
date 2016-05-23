@@ -33,7 +33,7 @@ $zabbixApiWrapper = new \StatsiteSinks\ZabbixApiWrapper(
 );
 
 if ($debugMode) {
-    $stdin = 'counts.test17|22.000000|1458126040';
+    $stdin = 'counts.test' . (int)rand(1,100) . '|22.000000|1458126040';
 } else {
     $stdin = file_get_contents('php://stdin');
 }
@@ -67,6 +67,8 @@ if ($stdinLines) {
 
     $zabbixFilePath = sys_get_temp_dir() . '/zabbix.txt';
     file_put_contents($zabbixFilePath, $zabbixFileContent);
+
+    msg('Metrics to send: ' . str_replace(PHP_EOL, ';', $zabbixFileContent));
 
     $cmd = "{$executable} -vv --zabbix-server {$host} --port {$port} --input-file {$zabbixFilePath}";
     msg("Executing: {$cmd}");
