@@ -52,16 +52,15 @@ class ZabbixApiWrapper
         ];
 
         try {
-            $itemsId = $this->zabbix->itemCreate($params);
+            $itemId = $this->zabbix->itemCreate($params);
+            if (!$itemId) {
+                throw new \RuntimeException('Zabbix item creation failed');
+            }
         } catch (\ZabbixApi\Exception $e) {
             // it's fine then item already exists
             if (0 !== strpos($e->getMessage(), 'API error -32602: Item with key')) {
                 throw $e;
             }
-        }
-
-        if (!$itemsId) {
-            throw new \RuntimeException('Zabbix item creation failed');
         }
     }
 }
