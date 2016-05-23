@@ -33,7 +33,7 @@ $zabbixApiWrapper = new \StatsiteSinks\ZabbixApiWrapper(
 );
 
 if ($debugMode) {
-    $stdin = 'counts.test' . (int)rand(1,100) . '|22.000000|1458126040';
+    $stdin = 'counts.test99|' . rand(int)(1,100) . '|1458126040';
 } else {
     $stdin = file_get_contents('php://stdin');
 }
