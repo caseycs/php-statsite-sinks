@@ -8,6 +8,12 @@
         }
     ],
     "require": {
-        "domnikl/statsd": "^2.3"
+        "domnikl/statsd": "^2.3",
+        "confirm-it-solutions/php-zabbix-api": "^2.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "StatsiteSinks\\": "src/"
+        }
     }
 }

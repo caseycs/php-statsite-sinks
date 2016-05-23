@@ -13,7 +13,10 @@ Second one - to push data to Zabbix:
 
 
 ```
-php zabbix.php /usr/bin/zabbix_sender zabbixHost 10051 metricsHostname metricsNamespace
+php build.php
+php build/statsite-sink-zabbix.phar /usr/bin/zabbix_sender zabbixHost 10051 metricsHostname http://user:password@zabbixhost/api metricsNamespace
+# for example
+php zabbix.php /usr/local/bin/zabbix_sender 192.168.99.100 32769 Zabbix http://admin:zabbix@192.168.99.100:32771/zabbix/api_jsonrpc.php test8
 ```
 
 ## Statsite config samples:
