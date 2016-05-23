@@ -2,13 +2,11 @@
 /**
  * Usage: php zabbix.php executable zabbixHost zabbixPort metricsHostname zabbixApiUrl metricsNamespace
  */
-use ZabbixApi\ZabbixApi;
-
 require __DIR__ . '/vendor/autoload.php';
 
 if (empty($argv[1]) || empty($argv[2]) || empty($argv[3]) || empty($argv[4]) || empty($argv[5]) || empty($argv[6])) {
     echo 'Required arguments not provided' . PHP_EOL;
-    echo 'Example: php build/statsite-sink-zabbix.phar /usr/bin/zabbix_sender zabbixHost 10051 metricsHostname http://user:password@zabbixhost/api metricsNamespace' . PHP_EOL;
+    echo 'Example: php statsite-sink-zabbix.phar /usr/bin/zabbix_sender zabbixHost 10051 metricsHostname http://user:password@zabbixhost/api metricsNamespace' . PHP_EOL;
     exit(1);
 }
 

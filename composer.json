@@ -15,5 +15,7 @@
         "psr-4": {
             "StatsiteSinks\\": "src/"
         }
+    },
+    "require-dev": {
     }
 }
